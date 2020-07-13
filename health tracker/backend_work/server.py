@@ -3,8 +3,10 @@ from flask import request
 import json
 import csv
 import math
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/calculate", methods = ["POST", "GET"])
 def calculate():
