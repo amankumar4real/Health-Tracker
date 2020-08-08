@@ -43,7 +43,7 @@ class Login extends React.Component{
                             <Link className="nav-link mr-2" to="/">Home</Link>
                         </li>
                         <li class="nav-item">
-                            <Link className="nav-link mr-3" to="/contact">Contact</Link>
+                            <Link className="nav-link mr-3" to="/">Contact</Link>
                         </li>
                     </ul>
                 </div>

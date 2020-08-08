@@ -35,7 +35,7 @@ class Dashboard extends React.Component{
                                     <Link className="nav-link" to="/">Home</Link>
                                 </li>
                                 <li class="nav-item">
-                                    <Link className="nav-link" to="/contact">Contact</Link>
+                                    <Link className="nav-link" to="/">Contact</Link>
                                 </li>
                             </ul>
                         </div>
@@ -78,7 +78,7 @@ class Dashboard extends React.Component{
                                         <Link className="nav-link" to="/">Home</Link>
                                     </li>
                                     <li class="nav-item">
-                                        <Link className="nav-link" to="/contact">Contact</Link>
+                                        <Link className="nav-link" to="/">Contact</Link>
                                     </li>
                                     {/* <li class="nav-item">
                                         <Link className="nav-link" to="/calculator">BMR</Link>

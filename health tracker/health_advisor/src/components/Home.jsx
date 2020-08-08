@@ -13,7 +13,7 @@ class Home extends React.Component{
     }
 
     componentDidMount(){
-        axios.get("http://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=53ce110ee804432a81c99d695a20883d")
+        axios.get("https://gnews.io/api/v3/search?q=health&token=d8108517213aea411f1d225be7e2f0be")
         .then(res=>{
             this.setState({
                 data:res.data.articles,
@@ -38,7 +38,7 @@ class Home extends React.Component{
                     </div>
 
                     <div className="row pt-5">
-                        <div className="col-12 col-md-8 col-lg-9">
+                        <div className="col-12 col-md-8 col-lg-9 mb-5">
                             <div className="offset-1 col-10">
                                 This Calorie Calculator is based on several equations, 
                                 and the results of the calculator are based on an estimated average. 
@@ -56,17 +56,20 @@ class Home extends React.Component{
                             
                         </div>
 
-                        <div style={{borderLeft:"solid gray 1px"}} className="col-6 col-md-4 col-lg-3 mx-auto">
+                        <div style={{borderLeft:"solid gray 1px"}} className="col-10 col-md-4 col-lg-3 mx-auto">
                             <h2 className="font-italic text-dark">News!</h2>
                             {data_a.map(a=>(
                                 <div class="card mb-2 bg-light">
-                                    <img class="card-img-top" src={a["urlToImage"]} alt="Card image cap"/>
+                                    <img class="card-img-top" src={a["image"]} alt="Card image cap"/>
                                     <div class="card-body">
                                         <a href={a["url"]}><p class="card-text">{a["title"]}</p></a>
                                     </div>
                             </div>
                             ))}
                         </div>
+                        {/* <div className="col-6 col-md-4 col-lg-3 mx-auto">
+                            <img style={{height:"60%"}} class="card-img-top" src="sid.png" alt="Card image cap"/>
+                        </div> */}
                     </div>
             </div>
                 </div>
@@ -75,26 +78,14 @@ class Home extends React.Component{
         }
         else{
             return(
-                <div className="container-fluid">
+            <div className="container-fluid">
 
-                <div className="row mt-5">
-                    <div className=" offset-1 col-10">
-                    This Calorie Calculator is based on several equations, 
-                    and the results of the calculator are based on an estimated average. 
-                    The Harris-Benedict Equation was one of the earliest equations used to 
-                    calculate basal metabolic rate (BMR), which is the amount of energy expended per 
-                    day at rest. It was revised in 1984 to be more accurate and was used up until 1990, when the Mifflin-St Jeor 
-                    Equation was introduced. The Mifflin-St Jeor Equation also calculates BMR, and has been shown to be more accurate 
-                    than the revised Harris-Benedict Equation. 
-                    </div>
+                <div style={{marginBottom:"60px"}} className="row text-center">
+                    <img style={{marginTop:"90px"}} className="col-12 col-lg-6 mx-auto" src="tenor.gif" />  
                 </div>
-
-                <div className="row">
-                    <div className="col-12 col-lg-6 text-center">
-                        <Calculator/>
-                    </div>
-                </div>
-            </div>          
+                
+            </div>    
+                
             )
             
         }

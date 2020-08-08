@@ -107,7 +107,7 @@ export const findCal = payload => dispatch => {
     console.log(payload)
     dispatch(fetchCal)
 
-    return axios.post("http://127.0.0.1:5000/calculate",payload)
+    return axios.post("https://healthtrackerbackend.amankumar.co/calculate",payload)
     .then(res=>res.data)
     .then(res=>dispatch(fetchSucc(res)))
     .catch(error=>dispatch(fetchFail(error)))
@@ -118,7 +118,7 @@ export const fetchReg = payload => dispatch => {
     console.log(payload)
     dispatch(regStart)
 
-    return axios.post("http://127.0.0.1:5000/register", payload)
+    return axios.post("https://healthtrackerbackend.amankumar.co/register", payload)
     .then(res=>res.data)
     .then(res=>dispatch(regSucc(res)))
     .catch(error=>dispatch(regFail(error)))
@@ -129,7 +129,7 @@ export const fetchLog = payload => dispatch =>{
     console.log(payload)
     dispatch(logStart)
 
-    return axios.post("http://127.0.0.1:5000/login", payload)
+    return axios.post("https://healthtrackerbackend.amankumar.co/login", payload)
     .then(res=>res.data)
     .then(res=>dispatch(logSucc(res)))
     .catch(error=>dispatch(logFail(error)))
@@ -140,7 +140,7 @@ export const updateUser = payload => dispatch => {
     console.log(payload)
     dispatch(dataUpdate)
 
-    return axios.post("http://127.0.0.1:5000/update", payload)
+    return axios.post("https://healthtrackerbackend.amankumar.co/update", payload)
     .then(res=>res.data)
     .then(res=>dispatch(dataUpdateSucc(res)))
     .catch(error=>dispatch(dataUpdateFail(error)))
@@ -151,7 +151,7 @@ export const fetchHealthNews = payload => dispatch => {
     console.log("payload")
     dispatch(fetch_news)
 
-    return axios.get("http://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=53ce110ee804432a81c99d695a20883d")
+    return axios.get("https://gnews.io/api/v3/search?q=health&token=d8108517213aea411f1d225be7e2f0be")
     .then(res=>dispatch(fetchNewsSucc(res)))
     .catch(error=>dispatch(fetchNewsFail(error)))
 }
